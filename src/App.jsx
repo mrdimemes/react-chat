@@ -1,7 +1,10 @@
+import { LoginPage } from './pages';
+import './styles/sass/App.sass';
+
 function App() {
   return (
     <div className="App">
-      Hi!
+      <LoginPage />
     </div>
   );
 }
