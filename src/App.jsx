@@ -1,5 +1,5 @@
 import { LoginPage } from './pages';
-import './styles/sass/App.sass';
+import './styles/sass/components/App.sass';
 
 function App() {
   return (
