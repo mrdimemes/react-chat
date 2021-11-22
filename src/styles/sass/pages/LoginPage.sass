@@ -1,1 +1,25 @@
 @use '../foundation/general'
+@use '../foundation/colors'
+
+
+.login-page
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: colors.$background-color
+
+  &__wrapper
+    width: 430px
+
+  &__label
+    margin-bottom: 7px
+    text-align: center
+
+  &__invite-text
+    font-size: 18px
+    line-height: 21px
+    font-weight: 300
+    text-align: center
+    color: colors.$gray
+    margin-bottom: 50px

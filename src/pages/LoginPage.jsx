@@ -45,7 +45,7 @@ function LoginPage() {
           />
         </form>
 
-        <a className='login-form__redirect-link' href="#">
+        <a className='login-form__redirect-link' href="/">
           Register now
         </a>
       
