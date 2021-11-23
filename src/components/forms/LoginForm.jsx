@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
+
 function LoginForm() {
   return (
     <form className='login-form form'>
@@ -12,7 +13,7 @@ function LoginForm() {
         )}
         type='email'
         name='login'
-        placeholder='Your email'
+        placeholder='E-mail'
         required
       />
       <input
@@ -32,6 +33,7 @@ function LoginForm() {
           'form__submit',
         )}
         type='submit'
+        value='Sign in'
       />
     </form>
   )
