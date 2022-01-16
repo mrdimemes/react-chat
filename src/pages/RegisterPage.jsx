@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BaseFormPage } from './';
-import { RegisterForm } from '../components'
+import { RegisterForm } from '../components';
 
 import '../styles/sass/pages/RegisterPage.sass';
 
