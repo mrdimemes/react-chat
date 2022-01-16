@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
+import '../styles/sass/pages/BaseFormPage.sass';
+
 
 // The base component for form pages, such as the login or registration page.
 

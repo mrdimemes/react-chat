@@ -3,8 +3,6 @@ import React from 'react';
 import { BaseFormPage } from './';
 import { LoginForm } from '../components';
 
-import '../styles/sass/pages/LoginPage.sass';
-
 
 function LoginPage() {
   return (
