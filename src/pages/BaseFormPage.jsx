@@ -50,7 +50,7 @@ function BaseFormPage({
           'form-page__form',
           { [`${className}__form`]: className })
         }>
-          <>{form}</>
+          { form }
           <a className={classNames(
             'form-page__redirect-link',
             { [`${className}__redirect-link`]: className }
