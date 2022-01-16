@@ -16,7 +16,7 @@ import classNames from 'classnames';
 //         fieldType: string - input type and part of additional class;
 //         fieldName: string - input name;
 //         fieldPlaceholder: string - input placeholder;
-// submitButtonText: string.
+// submitButtonText: string. By default "submit".
 
 
 function BaseForm({ className, fields, submitButtonText }) {
@@ -24,9 +24,10 @@ function BaseForm({ className, fields, submitButtonText }) {
     <form className={classNames('form', { className })}>
 
       {
-        fields.map((fieldType, fieldName, fieldPlaceholder) => {
+        fields.map(([fieldType, fieldName, fieldPlaceholder], index) => {
           return (
             <input
+              key={`${fieldName}-${index}`}
               className={classNames(
                 'form__field',
                 `form__${fieldType}-field`,
@@ -60,7 +61,7 @@ BaseForm.defaultProps = {
 
 BaseForm.propTypes = {
   className: PropTypes.string,
-  fields: PropTypes.arrayOf(PropTypes.string).isRequired,
+  fields: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string).isRequired).isRequired,
   submitButtonText: PropTypes.string,
 }
 
