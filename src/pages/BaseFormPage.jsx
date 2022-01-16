@@ -19,9 +19,9 @@ import classNames from 'classnames';
 // className: string - extended component class name.
 
 
-function BaseFormPage(
+function BaseFormPage({
   label, inviteText, form, redirectText, redirectUrl, className
-) {
+}) {
 
   return (
     <div className='form-page'>
@@ -48,7 +48,7 @@ function BaseFormPage(
           'form-page__form',
           { [`${className}__form`]: className })
         }>
-          {form}
+          <>{form}</>
           <a className={classNames(
             'form-page__redirect-link',
             { [`${className}__redirect-link`]: className }
