@@ -24,7 +24,7 @@ function BaseFormPage({
 }) {
 
   return (
-    <div className='form-page'>
+    <div className={classNames('form-page', className)} >
       <div className={classNames(
         'form-page__wrapper',
         { [`${className}__wrapper`]: className }
