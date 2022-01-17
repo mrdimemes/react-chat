@@ -1,4 +1,6 @@
-export { default as BaseForm} from './forms/BaseForm';
-export { default as LoginForm} from './forms/LoginForm';
-export { default as RegisterForm} from './forms/RegisterForm';
-export { default as RegisterConfirmation} from './forms/RegisterConfirmation';
+export {
+  BaseForm,
+  LoginForm,
+  RegisterForm,
+  RegisterConfirmation
+} from './forms';

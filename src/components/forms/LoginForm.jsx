@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BaseForm } from '../';
+import { BaseForm } from './';
 
 
 function LoginForm() {
