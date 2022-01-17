@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BaseFormPage } from './';
-import { RegisterConfirmation } from '../components';
+import { RegisterConfirmation } from '../../components';
 
 
 function RegisterPageConfirmation() {
