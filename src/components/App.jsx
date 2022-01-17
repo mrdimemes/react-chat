@@ -1,6 +1,4 @@
-import { RegisterPage } from '../pages';
-import { RegisterPageConfirmation } from '../pages';
-import { LoginPage } from '../pages';
+import { ChatPage } from '../pages';
 
 
 import '../styles/sass/components/App.sass';
@@ -8,9 +6,7 @@ import '../styles/sass/components/App.sass';
 function App() {
   return (
     <div className="App">
-      {/* <LoginPage /> */}
-      {/* <RegisterPage /> */}
-      <RegisterPageConfirmation />
+      <ChatPage />
     </div>
   );
 }
