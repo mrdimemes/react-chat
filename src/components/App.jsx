@@ -1,10 +1,16 @@
 import { RegisterPage } from '../pages';
+import { RegisterPageConfirmation } from '../pages';
+import { LoginPage } from '../pages';
+
+
 import '../styles/sass/components/App.sass';
 
 function App() {
   return (
     <div className="App">
-      <RegisterPage />
+      {/* <LoginPage /> */}
+      {/* <RegisterPage /> */}
+      <RegisterPageConfirmation />
     </div>
   );
 }
