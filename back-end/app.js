@@ -1,14 +1,11 @@
-const express = require('express');
+import express from 'express';
+
+import databaseConnection from './database/index.js';
+
+
 const app = express();
 const port = 3001;
 
-const mysql = require('mysql');
-const databaseConnection = mysql.createConnection({
-  host: 'localhost',
-  user: 'user',
-  password: 'password',
-  database: 'react_chat_database'
-});
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
