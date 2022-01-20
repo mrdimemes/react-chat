@@ -1,13 +1,12 @@
 import mysql from 'mysql';
-
-import { host, userName, password, databaseName } from './config.js';
+import 'dotenv/config';
 
 
 const databaseConnection = mysql.createConnection({
-  host: host,
-  user: userName,
-  password: password,
-  database: databaseName
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 export default databaseConnection;

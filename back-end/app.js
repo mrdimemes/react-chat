@@ -1,10 +1,11 @@
 import express from 'express';
-
+import 'dotenv/config';
 import databaseConnection from './database/index.js';
 
 
 const app = express();
-const port = 3001;
+
+const PORT = process.env.NODE_PORT;
 
 
 app.get('/', (req, res) => {
@@ -12,5 +13,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`)
+  console.log(`App listening at http://localhost:${PORT}`)
 });
