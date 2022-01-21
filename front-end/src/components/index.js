@@ -4,3 +4,4 @@ export {
   RegisterForm,
   RegisterConfirmation
 } from './forms';
+export { default as Chat } from './Chat';
