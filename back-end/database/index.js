@@ -2,7 +2,7 @@ import mysql from 'mysql';
 import 'dotenv/config';
 
 
-const pool = mysql.createPoll({
+const pool = mysql.createPool({
   connectionLimit: process.env.DB_CONNECTION_LIMIT,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
@@ -11,4 +11,4 @@ const pool = mysql.createPoll({
 });
 
 
-export default databaseConnection;
+export default pool;
