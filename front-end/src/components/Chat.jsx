@@ -1,5 +1,7 @@
 import React from 'react';
 
+import '../styles/sass/components/Chat.sass';
+
 
 function Chat() {
   return (
@@ -7,9 +9,10 @@ function Chat() {
       <div className='chat__header'>
         <div className='chat__header-name'>Caesar</div>
         <div className='chat__header-status'>
-          <div className='chat__header-status-marker status-marker status-online'></div>
+          <div className='chat__header-status-marker status-marker status-marker_online'></div>
           <div className='chat__header-status-text'>online</div>
         </div>
+        <div className='chat__header-popup-icon'></div>
         <div className='chat__header-popup'></div>
       </div>
 
