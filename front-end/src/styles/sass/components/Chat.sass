@@ -4,8 +4,11 @@
 
 
 .chat
+  height: 100vh
+  display: grid
+  grid-template-rows: 60px 1fr max-content
   &__header
-    height: 60px
+    height: 100%
     @include mixins.flex-centered
     row-gap: 3px
     flex-direction: column
@@ -13,6 +16,7 @@
     font-size: 14px
     line-height: 16px
     position: relative
+    padding: 0 35px
 
   &__header-name
     color: colors.$dark-gray
@@ -32,3 +36,8 @@
     right: 35px
     background-color: red
 
+  &__input
+    margin: 30px 35px 37px 35px
+    height: 45px
+    border: 1px solid colors.$light-gray
+    border-radius: 4px
