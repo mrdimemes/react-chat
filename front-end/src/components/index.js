@@ -7,5 +7,6 @@ export {
 
 export {
   Chat,
-  MassageGallery
+  MassageGallery,
+  Massage
 } from './chat';
