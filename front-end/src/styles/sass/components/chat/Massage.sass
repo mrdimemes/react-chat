@@ -1,0 +1,46 @@
+@use '../../foundation/general'
+@use '../../foundation/mixins'
+@use '../../foundation/colors'
+
+
+.massage
+  padding-top: 10px
+  padding-bottom: 30px
+  display: flex
+  column-gap: 13px
+  align-items: flex-end
+  &__photo
+    @include mixins.square(30px)
+    border-radius: 50%
+    background-color: black
+  &__text
+    max-width: 400px
+    padding: 15px
+    font-size: 14px
+    line-height: 20px
+    overflow-wrap: break-word
+    position: relative
+    &_incoming
+      border-radius: 12px 12px 12px 0
+      background-color: colors.$main-color
+      box-shadow: 0px 5px 5px rgba(54, 116, 255, 0.196733)
+      color: white
+    &_outgoing
+      border-radius: 12px 12px 0px 12px
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.0220444)
+      border: 1px solid colors.$light-gray
+
+  &__meta
+    display: flex
+    column-gap: 7px
+    font-size: 12px
+    position: absolute
+    bottom: -20px
+    color: colors.$gray
+    &_incoming
+      left: 0
+    &_outgoing
+      right: 0
+
+  &_outgoing
+    flex-direction: row-reverse
