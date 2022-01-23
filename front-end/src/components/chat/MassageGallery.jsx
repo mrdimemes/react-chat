@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../styles/sass/components/MassageGallery.sass';
+import '../../styles/sass/components/chat/MassageGallery.sass';
 
 
 function MassageGallery() {

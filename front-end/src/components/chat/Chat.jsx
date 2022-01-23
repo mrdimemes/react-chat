@@ -2,9 +2,9 @@ import React from 'react';
 
 import { MassageGallery } from './';
 
-import '../styles/sass/components/Chat.sass';
+import '../../styles/sass/components/chat/Chat.sass';
 
-import sendSvg from '../assets/images/svg/pointer-right.svg';
+import sendSvg from '../../assets/images/svg/pointer-right.svg';
 
 
 function Chat() {
