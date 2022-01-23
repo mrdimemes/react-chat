@@ -38,6 +38,38 @@
 
   &__input
     margin: 30px 35px 37px 35px
-    height: 45px
-    border: 1px solid colors.$light-gray
+    padding: 13px 15px
+    display: flex
+    column-gap: 13px
+    justify-content: space-between
+    align-items: flex-end
+    border: 1px solid colors.$gray
     border-radius: 4px
+
+  &__input-text
+    flex-grow: 1
+    resize: none
+    overflow-y: auto
+    overflow-wrap: break-word
+    min-height: min-content
+    max-height: 160px
+    max-width: 600px
+    font-size: 14px
+    line-height: 16px
+    color: colors.$dark-gray
+    &:empty::before
+      content: 'Enter the massage...'
+      color: colors.$gray
+
+  &__input-text:focus
+    outline: none
+    &::before
+      content: ''
+
+  &__input-send-button
+    @include mixins.square(20px)
+    opacity: 0.5
+    cursor: pointer
+    transition: 0.2s
+    &:hover
+      opacity: 1

@@ -4,6 +4,8 @@ import { MassageGallery } from './';
 
 import '../styles/sass/components/Chat.sass';
 
+import sendSvg from '../assets/images/svg/pointer-right.svg';
+
 
 function Chat() {
   return (
@@ -19,10 +21,22 @@ function Chat() {
       </div>
 
       <MassageGallery />
-      <form className='chat__input'>
-        <input className='chat__input-text' type='text' placeholder='Enter massage...'/>
-        <input className='chat__input-submit' type='submit' />
-      </form>
+
+      <div className='chat__input'>
+        <div
+          className='chat__input-text'
+          role="textbox"
+          placeholder='Enter massage...'
+          contenteditable='true'
+        />
+        <div className='chat__input-send-button' >
+          <img
+            className='chat__input-send-button-img'
+            src={ sendSvg }
+            alt='send'
+          />
+        </div>
+      </div>
 
       
     </div>
