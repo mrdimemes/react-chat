@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Chat } from '../components';
+import { Chat, Contacts } from '../components';
 
 import '../styles/sass/pages/ChatPage.sass';
 
@@ -9,7 +9,7 @@ function ChatPage() {
   return (
     <div className='chat-page'>
       <Chat />
-      <div className='contacts'></div>
+      <Contacts />
     </div>
   )
 }

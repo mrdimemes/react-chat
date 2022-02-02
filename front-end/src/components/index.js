@@ -10,3 +10,7 @@ export {
   MassageGallery,
   Massage
 } from './chat';
+
+export {
+  Contacts
+} from './contacts';
