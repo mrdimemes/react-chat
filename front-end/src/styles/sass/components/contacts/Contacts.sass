@@ -1,0 +1,39 @@
+@use '../../foundation/general'
+@use '../../foundation/colors'
+@use '../../foundation/mixins'
+
+.contacts
+  width: 320px
+  border-right: 1px solid colors.$background-color
+  height: 100vh
+  display: grid
+  grid-template-rows: 60px 80px 1fr
+
+  &__header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom: 1px solid colors.$background-color
+    padding: 0 20px
+
+  &__popup
+    @include mixins.flex-centered
+    column-gap: 7px
+
+  &__popup-icon
+    @include mixins.square(18px)
+
+  &__popup-text
+    font-size: 14px
+    line-height: 16px
+    color: colors.$gray
+
+  &__new-chat
+    @include mixins.square(18px)
+
+  &__search
+    @include mixins.flex-centered
+    padding: 0 20px
+
+  &__gallery
+    padding: 10px 20px
