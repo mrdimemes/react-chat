@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Search } from './';
+
 import '../../styles/sass/components/contacts/Contacts.sass';
 
 import contactsPng from '../../assets/images/png/contacts.png';
@@ -22,7 +24,7 @@ function Contacts() {
         </div>
       </div>
       <div className='contacts__search'>
-        search
+        <Search />
       </div>
       <div className='contacts__gallery'>
         gallery

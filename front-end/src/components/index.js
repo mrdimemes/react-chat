@@ -12,5 +12,6 @@ export {
 } from './chat';
 
 export {
-  Contacts
+  Contacts,
+  Search
 } from './contacts';
