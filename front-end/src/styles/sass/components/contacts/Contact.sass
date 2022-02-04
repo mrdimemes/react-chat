@@ -1,0 +1,72 @@
+@use '../../foundation/general'
+@use '../../foundation/colors'
+@use '../../foundation/mixins'
+
+.contact
+  height: 40px
+  display: flex
+  column-gap: 10px
+
+  &__photo
+    @include mixins.square(40px)
+    border-radius: 50%
+    position: relative
+    background-color: black
+
+  &__online-marker
+    @include mixins.square(8px)
+    border-radius: 50%
+    background-color: colors.$success
+    border: 3px solid white
+    position: absolute
+    bottom: 0
+    right: 0
+
+  &__body
+    flex-grow: 1
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    position: relative
+
+  &__name
+    font-size: 14px
+    line-height: 16px
+    font-weight: 600
+    max-width: 180px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &__preview
+    font-size: 14px
+    line-height: 16px
+    color: colors.$gray
+    max-width: 180px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+  &__unreaded-income
+    @include mixins.square(18px)
+    @include mixins.flex-centered
+    border-radius: 50%
+    background-color: colors.$error
+    font-size: 11px
+    line-height: 13px
+    font-weight: 700
+    color: white
+    position: absolute
+    right: 0
+    bottom: 0
+
+  &__outcome-status
+    display: none
+
+  &__time
+    font-size: 12px
+    line-height: 14px
+    color: colors.$gray
+    position: absolute
+    top: 0
+    right: 0
