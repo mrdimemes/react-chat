@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Search } from './';
+import { ContactSearch } from './';
+import { ContactGallery } from './';
 
 import '../../styles/sass/components/contacts/Contacts.sass';
 
@@ -24,11 +25,11 @@ function Contacts() {
         </div>
       </div>
       <div className='contacts__search'>
-        <Search />
+        <ContactSearch />
       </div>
-      <div className='contacts__gallery'>
-        gallery
-      </div>
+      <ContactGallery 
+        className={'contacts__gallery'}
+      />
     </div>
   )
 }

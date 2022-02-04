@@ -13,5 +13,7 @@ export {
 
 export {
   Contacts,
-  Search
+  ContactSearch,
+  ContactGallery,
+  Contact
 } from './contacts';
