@@ -16,11 +16,14 @@
   &__online-marker
     @include mixins.square(8px)
     border-radius: 50%
-    background-color: colors.$success
     border: 3px solid white
     position: absolute
     bottom: 0
     right: 0
+    display: none
+    &_online
+      display: block
+      background-color: colors.$success
 
   &__body
     flex-grow: 1
@@ -59,9 +62,30 @@
     position: absolute
     right: 0
     bottom: 0
+    display: none
+    &_showed
+      display: flex
 
   &__outcome-status
-    display: none
+    @include mixins.square(18px)
+    position: absolute
+    right: 0
+    bottom: 2px
+    &_delivered
+      &::before
+        content: ''
+        display: block
+        width: 18px
+        height: 2px
+        background-color: colors.$main-color
+        transform: translate(3px, 9px) rotate(-60grad)
+      &::after
+        content: ''
+        display: block
+        width: 9px
+        height: 2px
+        background-color: colors.$main-color
+        transform: translate(0px, 11px) rotate(48grad)
 
   &__time
     font-size: 12px
