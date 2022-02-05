@@ -28,7 +28,9 @@ function Contact({
         <div className={classNames(
           'contact__outcome-status',
           {[`contact__outcome-status_${outcomeStatus}`]: outcomeStatus}
-        )} />
+        )} >
+          <span />
+        </div>
         <div className='contact__time'>{ time }</div>
       </div>
     </div>

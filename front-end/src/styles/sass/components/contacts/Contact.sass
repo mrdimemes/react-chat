@@ -67,7 +67,7 @@
       display: flex
 
   &__outcome-status
-    @include mixins.square(18px)
+    @include mixins.square(12px)
     position: absolute
     right: 0
     bottom: 2px
@@ -75,17 +75,40 @@
       &::before
         content: ''
         display: block
-        width: 18px
+        width: 12px
         height: 2px
         background-color: colors.$main-color
-        transform: translate(3px, 9px) rotate(-60grad)
+        transform: translate(2px, 6px) rotate(-60grad)
       &::after
         content: ''
         display: block
-        width: 9px
+        width: 6px
         height: 2px
         background-color: colors.$main-color
-        transform: translate(0px, 11px) rotate(48grad)
+        transform: translate(0px, 6px) rotate(45grad)
+    &_readed
+      &::before
+        content: ''
+        display: block
+        width: 12px
+        height: 2px
+        background-color: colors.$main-color
+        transform: translate(-3px, 5px) rotate(-60grad)
+      &::after
+        content: ''
+        display: block
+        width: 6px
+        height: 2px
+        background-color: colors.$main-color
+        transform: translate(-5px, 3px) rotate(45grad)
+      span::before
+        content: ''
+        display: block
+        width: 12px
+        height: 2px
+        background-color: colors.$main-color
+        transform: translate(2px, 3px) rotate(-60grad)
+
 
   &__time
     font-size: 12px
