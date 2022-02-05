@@ -4,6 +4,8 @@ import classNames from 'classnames';
 
 import { Contact } from './';
 
+import '../../styles/sass/components/contacts/ContactGallery.sass';
+
 
 function ContactGallery({ className }) {
   return (
@@ -18,6 +20,86 @@ function ContactGallery({ className }) {
         unreadIncome={0}
         time='14:20'
         outcomeStatus='delivered'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
+      />
+
+      <Contact
+        name='Mike the Mime'
+        preview='Hi'
+        unreadIncome={0}
+        time='14:24'
+        outcomeStatus='readed'
       />
 
       <Contact
