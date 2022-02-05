@@ -36,7 +36,36 @@
     @include mixins.square(21px)
     position: absolute
     right: 35px
-    background-color: red
+    cursor: pointer
+    &::before
+      content: ''
+      display: block
+      @include mixins.square(5px)
+      border-radius: 50%
+      background-color: colors.$gray
+      transform: translate(0, 8px)
+      bor
+    &::after
+      content: ''
+      display: block
+      @include mixins.square(5px)
+      border-radius: 50%
+      background-color: colors.$gray
+      transform: translate(16px, -2px)
+    span
+      content: ''
+      display: block
+      @include mixins.square(5px)
+      border-radius: 50%
+      background-color: colors.$gray
+      transform: translate(8px, 3px)
+    &:hover
+      &::before
+        background-color: colors.$dark-gray
+      span
+        background-color: colors.$dark-gray
+      &::after
+        background-color: colors.$dark-gray
 
   &__input
     margin: 30px 35px 37px 35px

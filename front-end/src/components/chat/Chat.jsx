@@ -16,7 +16,7 @@ function Chat() {
           <div className='chat__header-status-marker status-marker status-marker_online'></div>
           <div className='chat__header-status-text'>online</div>
         </div>
-        <div className='chat__header-popup-icon'></div>
+        <div className='chat__header-popup-icon'><span/></div>
         <div className='chat__header-popup'></div>
       </div>
 
