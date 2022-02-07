@@ -5,6 +5,7 @@ import 'dotenv/config';
 // This file is not the part of application!
 // Run it via node to create MySQL database and tables
 
+console.log(process.env.DB_HOST);
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -15,11 +16,11 @@ const connection = mysql.createConnection({
 connection.connect((err) => {if (err) {throw (err)}});
 
 connection.query(
-  `CREATE DATABASE ${process.env.BD_NAME}`,
+  `CREATE DATABASE ${process.env.DB_NAME}`,
   (err) => {if (err) {throw (err)}}
 );
 connection.query(
-  `USE ${process.env.BD_NAME}`,
+  `USE ${process.env.DB_NAME}`,
   (err) => {if (err) {throw (err)}}
 );
 connection.query(
