@@ -26,7 +26,8 @@ connection.query(
   'CREATE TABLE users ( ' + 
   'id INT PRIMARY KEY AUTO_INCREMENT NOT NULL, ' +
   'email VARCHAR(50) NOT NULL, ' +
-  'password VARCHAR(50) NOT NULL, ' +
+  'password VARCHAR(44) NOT NULL, ' +
+  'salt VARCHAR(' + process.env.USER_SALT_LEN + ') NOT NULL, ' +
   'name VARCHAR(50) NOT NULL ' +
   ')',
   (err) => {if (err) {throw (err)}}
