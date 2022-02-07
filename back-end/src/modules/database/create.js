@@ -5,7 +5,6 @@ import 'dotenv/config';
 // This file is not the part of application!
 // Run it via node to create MySQL database and tables
 
-console.log(process.env.DB_HOST);
 
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,

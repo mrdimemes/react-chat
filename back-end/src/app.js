@@ -1,6 +1,6 @@
 import express from 'express';
 import 'dotenv/config';
-import databasePool from './database/index.js';
+import databasePool from './modules/database/database.js';
 
 
 const app = express();
