@@ -26,5 +26,4 @@ class MySQLConnector {
   }
 }
 
-const connector = new MySQLConnector();
-export default connector;
+export default new MySQLConnector();
