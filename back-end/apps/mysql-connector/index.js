@@ -11,19 +11,13 @@ class MySQLConnector {
       host: process.env.DB_HOST,
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME
-    });
+      database: process.env.DB_NAME,
+    }).promise();
   }
 
-  query(query, paramsArray) {
-    this._pool.query(query, paramsArray, (err, rows) => {
-      if (err) {
-        throw Error(`SQL error: ${err.sqlMessage}`);
-      }
-      if (rows) {
-        return rows;
-      }
-    })
+  async query(query, paramsArray) {
+    const [rows, fields] = await this._pool.query(query, paramsArray);
+    return rows;
   }
 }
 
