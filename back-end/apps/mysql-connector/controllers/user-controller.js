@@ -3,9 +3,9 @@ import connector from "../index.js"
 class UserController {
   _connector = connector;
 
-  async addUser(name, email, password) {
-    const sql = "INSERT INTO users (name, email, password) VALUES (?, ?, ?)";
-    await this._connector.query(sql, [name, email, password]);
+  async addUser(name, email, password, activationLink) {
+    const sql = "INSERT INTO users (name, email, password, activation_link) VALUES (?, ?, ?, ?)";
+    await this._connector.query(sql, [name, email, password, activationLink]);
   }
 
   async findUserByEmail(email) {
