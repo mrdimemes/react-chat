@@ -14,12 +14,12 @@ class UserController {
   }
 
   async findUserById(id) {
-    const sql = "SELECT * FROM users WHERE id = ?";
+    const sql = "SELECT * FROM users WHERE user_id = ?";
     return await this._connector.query(sql, [id]);
   }
 
   async removeUser(id) {
-    const sql = "DELETE FROM users WHERE id = ?";
+    const sql = "DELETE FROM users WHERE user_id = ?";
     await this._connector.query(sql, [id]);
   }
 }
