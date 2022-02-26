@@ -1,7 +1,7 @@
 class UserDTO {
+  name;
   email;
   id;
-  isActivated;
 
   constructor(model) {
     this.id = model.user_id;
