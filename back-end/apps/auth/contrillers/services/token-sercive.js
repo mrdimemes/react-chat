@@ -28,6 +28,11 @@ class TokenService {
       refreshToken
     }
   }
+
+  async saveRefreshToken(userId, refreshToken, browser) {
+    await this._controller.removeToken(userId, browser);
+    await this._controller.addToken(userId, refreshToken, browser);
+  }
 }
 
 export default new TokenService()
