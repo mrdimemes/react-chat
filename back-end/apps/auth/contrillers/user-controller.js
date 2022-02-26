@@ -19,7 +19,7 @@ class UserController {
       );
       return res.json(userData);
     } catch (error) {
-      console.log(e);
+      console.log(error);
     }
   }
 
