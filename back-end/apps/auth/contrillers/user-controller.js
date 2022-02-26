@@ -1,29 +1,25 @@
-import HashService from "./services/hash-service.js";
-import MailService from "./services/hash-service.js";
-import TokenService from "./services/hash-service.js";
-import UserService from "./services/hash-service.js";
-
+import "dotenv/config";
+import userService from "./services/user-service.js";
 
 
 class UserController {
-  _hashes;
-  _mails;
-  _tokens;
-  _users;
-
-  constructor() {
-    this._hashes = HashService;
-    this._mails = MailService;
-    this._tokens = TokenService;
-    this._users = UserService;
-  }
-
   async registration(req, res, next) {
     try {
-      // const hashPassword = this._hash.getHash(password);
-      
+      const { name, email, password, browser } = req.body;
+      const userData = await userService.registration(
+        name, email, password, browser
+      );
+      res.cookie(
+        "refreshToken",
+        userData.refreshToken,
+        {
+          maxAge: process.env.JWT_REFRESH_LIFETIME * 24 * 60 * 60 * 1000,
+          httpOnly: true
+        }
+      );
+      return res.json(userData);
     } catch (error) {
-      
+      console.log(e);
     }
   }
 
@@ -31,31 +27,31 @@ class UserController {
     try {
       res.json(["1"])
     } catch (error) {
-      
+
     }
   }
 
   async logout(req, res, next) {
     try {
-      
+
     } catch (error) {
-      
+
     }
   }
 
   async activate(req, res, next) {
     try {
-      
+
     } catch (error) {
-      
+
     }
   }
 
   async refresh(req, res, next) {
     try {
-      
+
     } catch (error) {
-      
+
     }
   }
 }
