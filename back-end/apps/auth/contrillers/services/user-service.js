@@ -4,6 +4,8 @@ import hashService from "./hash-service.js";
 import mailService from "./mail-service.js";
 import tokenService from "./token-service.js";
 import UserDTO from "../../DTOs/user-dto.js";
+import AuthError from '../../exceptions/auth-error.js';
+
 
 class UserService {
   _controller;
@@ -33,7 +35,7 @@ class UserService {
   async activation(activationLink) {
     const user = await this._controller.findUserByActivationLink(activationLink);
     if (!user.length) {
-      throw new Error("Incorrect activation link: user not found.");
+      throw new AuthError.BadRequestError("Incorrect activation link");
     }
     await this._controller.activateUser(user[0].user_id);
   }

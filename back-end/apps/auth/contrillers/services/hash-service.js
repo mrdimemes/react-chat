@@ -12,7 +12,7 @@ class HashService {
   getHash(msg) {
     const salt = process.env.SALT;
     if (!salt) {
-      throw Error("Salt not found");
+      throw new Error("Salt not found");
     }
     return this._crypto.createHmac("sha256", salt).update(msg).digest("base64");
   }
