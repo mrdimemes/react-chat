@@ -41,9 +41,11 @@ class UserController {
 
   async activate(req, res, next) {
     try {
-
+      const activationLink = req.params.link;
+      await userService.activation(activationLink);
+      res.redirect(process.env.CLIENT_URL);
     } catch (error) {
-
+      console.log(error);
     }
   }
 

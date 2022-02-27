@@ -19,14 +19,14 @@ class MailService {
   }
 
   async sendActivationMail(to, link) {
-    const activationURL = process.env.HOST_URL +
+    const activationURL = process.env.API_URL +
       process.env.AUTH_PATH +
       "/activate/"
       + link;
     await this._transporter.sendMail({
       from: process.env.SMTP_USER,
       to: to,
-      subject: "Accaunt activation: " + process.env.HOST_URL,
+      subject: "Accaunt activation: " + process.env.API_URL,
       text: "",
       html: 
         `

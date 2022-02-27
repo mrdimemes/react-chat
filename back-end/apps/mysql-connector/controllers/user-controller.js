@@ -18,8 +18,18 @@ class UserController {
     return await this._connector.query(sql, [id]);
   }
 
+  async findUserByActivationLink(activationLink) {
+    const sql = "SELECT * FROM users WHERE activation_link = ?";
+    return await this._connector.query(sql, [activationLink]);
+  }
+
   async removeUser(id) {
     const sql = "DELETE FROM users WHERE user_id = ?";
+    await this._connector.query(sql, [id]);
+  }
+
+  async activateUser(id) {
+    const sql = "UPDATE users SET is_activated = 1 WHERE user_id = ?";
     await this._connector.query(sql, [id]);
   }
 }
