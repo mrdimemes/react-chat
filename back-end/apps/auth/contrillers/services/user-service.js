@@ -16,6 +16,17 @@ class UserService {
     this._getActivationLink = v4;
   }
 
+  async generateTokens(user, browser) {
+    const userDTO = new UserDTO(user);
+    const tokens = tokenService.generateTokens({ ...userDTO });
+    await tokenService.saveRefreshToken(
+      user.user_id,
+      tokens.refreshToken,
+      browser
+    );
+    return { ...tokens, user: userDTO };
+  }
+
   async registration(name, email, password, browser) {
     try {
       const hashPassword = hashService.getHash(password);
@@ -23,14 +34,7 @@ class UserService {
       await this._controller.addUser(name, email, hashPassword, activationLink);
       await mailService.sendActivationMail(email, activationLink);
       const user = await this._controller.findUserByEmail(email);
-      const userDTO = new UserDTO(user[0]);
-      const tokens = tokenService.generateTokens({ ...userDTO });
-      await tokenService.saveRefreshToken(
-        user[0].user_id,
-        tokens.refreshToken,
-        browser
-      );
-      return { ...tokens, user: userDTO };
+      return await this.generateTokens(user[0], browser);
     } catch (error) {
       switch (error.code) {
         case "ER_DUP_ENTRY":
@@ -52,6 +56,14 @@ class UserService {
       throw ApiError.BadRequestError("Incorrect activation link");
     }
     await this._controller.activateUser(user[0].user_id);
+  }
+
+  async login(email, password, browser) {
+    const user = await this._controller.findUserByEmail(email);
+    if (!user.length || !hashService.checkHash(password, user[0].password)) {
+      throw ApiError.BadRequestError("Incorrect email or password");
+    }
+    return await this.generateTokens(user[0], browser);
   }
 }
 
