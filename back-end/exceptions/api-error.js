@@ -1,4 +1,4 @@
-class AuthError extends Error {
+class ApiError extends Error {
   status;
   errors;
 
@@ -8,10 +8,10 @@ class AuthError extends Error {
     this.errors = errors;
   }
 
-  static UnauthorizedError() {
-    return new AuthError(401, "User not authorized");
+  static BadRequestError(massage, errors = []) {
+    return new ApiError(400, massage, errors);
   }
 }
 
 
-export default AuthError;
+export default ApiError;

@@ -1,4 +1,4 @@
-class AuthError extends Error {
+class MySQLError extends Error {
   status;
   errors;
 
@@ -7,11 +7,7 @@ class AuthError extends Error {
     this.status = status;
     this.errors = errors;
   }
-
-  static UnauthorizedError() {
-    return new AuthError(401, "User not authorized");
-  }
 }
 
 
-export default AuthError;
+export default MySQLError;

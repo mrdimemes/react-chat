@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import crypto from 'crypto';
+import ConfigError from '../../../../exceptions/config-error.js';
 
 
 class HashService {
@@ -12,7 +13,7 @@ class HashService {
   getHash(msg) {
     const salt = process.env.SALT;
     if (!salt) {
-      throw new Error("Salt not found");
+      throw ConfigError.EnvironmentError("Salt not found");
     }
     return this._crypto.createHmac("sha256", salt).update(msg).digest("base64");
   }
