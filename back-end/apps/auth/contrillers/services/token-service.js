@@ -33,6 +33,10 @@ class TokenService {
     await this._controller.removeToken(userId, browser);
     await this._controller.addToken(userId, refreshToken, browser);
   }
+
+  async removeRefreshToken(token) {
+    await this._controller.removeTokenByValue(token);
+  }
 }
 
 export default new TokenService()

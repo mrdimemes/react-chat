@@ -65,6 +65,10 @@ class UserService {
     }
     return await this.generateTokens(user[0], browser);
   }
+
+  async logout(refreshToken) {
+    const token = await tokenService.removeRefreshToken(refreshToken);
+  }
 }
 
 export default new UserService()

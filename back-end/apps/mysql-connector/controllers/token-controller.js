@@ -20,6 +20,11 @@ class TokenController {
     await this._connector.query(sql, [user_id, browser]);
   }
 
+  async removeTokenByValue(token) {
+    const sql = "DELETE FROM tokens WHERE refresh_token = ?";
+    await this._connector.query(sql, [token]);
+  }
+
   async removeExpiredTokens(user_id) {
     const sql = "DELETE FROM tokens WHERE user_id = ? AND DATEDIFF(CURRENT_DATE, upload_date) > ?";
     await this._connector.query(
