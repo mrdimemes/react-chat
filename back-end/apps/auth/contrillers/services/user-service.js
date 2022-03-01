@@ -77,10 +77,10 @@ class UserService {
     }
     const userData = tokenService.validateRefreshToken(refreshToken);
     const tokenInDB = await tokenService.findTokenInDB(refreshToken);
-    if (!userData || tokenInDB.isEmpty()) {
+    if (!userData || !tokenInDB.length) {
       throw AuthError.UnauthorizedError();
     }
-    const user = await this._controller.findUserById(userData.user_id);
+    const user = await this._controller.findUserById(userData.id);
     return await this.generateTokens(user[0], tokenInDB[0].browser);
   }
 }
