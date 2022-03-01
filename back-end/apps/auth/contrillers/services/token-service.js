@@ -37,6 +37,26 @@ class TokenService {
   async removeRefreshToken(token) {
     await this._controller.removeTokenByValue(token);
   }
+
+  validateAccessToken(token) {
+    try {
+      return this._jwt.verify(token, process.env.JWT_ACCESS_SERCRET);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  validateRefreshToken(token) {
+    try {
+      return this._jwt.verify(token, process.env.JWT_REFRESH_SERCRET);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  async findTokenInDB(refresh_token) {
+    return await this._controller.findToken(refresh_token);
+  }
 }
 
 export default new TokenService()

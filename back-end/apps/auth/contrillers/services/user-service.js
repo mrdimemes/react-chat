@@ -5,6 +5,7 @@ import mailService from "./mail-service.js";
 import tokenService from "./token-service.js";
 import UserDTO from "../../DTOs/user-dto.js";
 import ApiError from "../../../../exceptions/api-error.js";
+import AuthError from "../../exceptions/auth-error.js";
 
 
 class UserService {
@@ -68,6 +69,19 @@ class UserService {
 
   async logout(refreshToken) {
     const token = await tokenService.removeRefreshToken(refreshToken);
+  }
+
+  async refresh(refreshToken) {
+    if (!refreshToken) {
+      throw AuthError.UnauthorizedError();
+    }
+    const userData = tokenService.validateRefreshToken(refreshToken);
+    const tokenInDB = await tokenService.findTokenInDB(refreshToken);
+    if (!userData || tokenInDB.isEmpty()) {
+      throw AuthError.UnauthorizedError();
+    }
+    const user = await this._controller.findUserById(userData.user_id);
+    return await this.generateTokens(user[0], tokenInDB[0].browser);
   }
 }
 

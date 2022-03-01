@@ -9,6 +9,10 @@ class TokenController {
     await this._connector.query(sql, [user_id, refresh_token, browser]);
   }
 
+  async findToken(refresh_token) {
+    const sql = "SELECT * FROM tokens WHERE refresh_token = ?";
+    return await this._connector.query(sql, [refresh_token]);
+  }
 
   async removeAllTokens(user_id) {
     const sql = "DELETE FROM tokens WHERE user_id = ?";
