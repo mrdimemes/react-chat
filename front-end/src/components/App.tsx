@@ -1,11 +1,11 @@
 import React from 'react';
-import { LoginPage } from '../pages';
+import { RegisterPageConfirmation } from '../pages';
 import '../styles/sass/components/App.sass';
 
 function App() {
   return (
     <div className="app">
-      <LoginPage />
+      <RegisterPageConfirmation />
     </div>
   );
 }

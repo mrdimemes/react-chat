@@ -6,8 +6,8 @@ type FormPageProps = {
   label: string;
   inviteText: string;
   form: JSX.Element;
-  redirectText: string;
-  redirectUrl: string;
+  redirectText?: string;
+  redirectUrl?: string;
   className: string;
 }
 
