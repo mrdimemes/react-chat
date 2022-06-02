@@ -1,25 +1,13 @@
 import React from 'react';
-
-import PropTypes from 'prop-types';
-
 import classNames from 'classnames';
 
+type BaseFormProps = {
+  className: string;
+  fields: string[][];
+  submitButtonText: string;
+}
 
-// The base form component. Renders an html form with an arbitrary number of
-// required fields and a submit button.
-
-// Component props:
-
-// className: string - extended component class name;
-// fields: array of arrays of the form
-//     [fieldType, fieldName, fieldPlaceholder], where:
-//         fieldType: string - input type and part of additional class;
-//         fieldName: string - input name;
-//         fieldPlaceholder: string - input placeholder;
-// submitButtonText: string. By default "submit".
-
-
-function BaseForm({ className, fields, submitButtonText }) {
+function BaseForm({ className, fields, submitButtonText = 'submit' }: BaseFormProps) {
   return (
     <form className={classNames('form', { className })}>
 
@@ -53,17 +41,5 @@ function BaseForm({ className, fields, submitButtonText }) {
     </form>
   )
 }
-
-
-BaseForm.defaultProps = {
-  submitButtonText: 'submit'
-}
-
-BaseForm.propTypes = {
-  className: PropTypes.string,
-  fields: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string).isRequired).isRequired,
-  submitButtonText: PropTypes.string,
-}
-
 
 export default BaseForm;

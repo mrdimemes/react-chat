@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BaseFormPage } from './';
 import { LoginForm } from '../../components';
 

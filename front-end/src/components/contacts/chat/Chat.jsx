@@ -4,7 +4,6 @@ import { MassageGallery } from './';
 
 import '../../styles/sass/components/chat/Chat.sass';
 
-import sendSvg from '../../assets/images/svg/pointer-right.svg';
 
 
 function Chat() {
@@ -32,7 +31,7 @@ function Chat() {
         <div className='chat__input-send-button' >
           <img
             className='chat__input-send-button-img'
-            src={ sendSvg }
+            src={ 1 }
             alt='send'
           />
         </div>
