@@ -4,10 +4,18 @@ import classNames from 'classnames';
 
 import '../../styles/sass/components/contacts/Contact.sass';
 
+type ContactProps = {
+  name: string;
+  preview: string;
+  unreadIncome: number;
+  time: string;
+  onlineStatus?: string;
+  outcomeStatus?: string;
+}
 
 function Contact({ 
   name, preview, unreadIncome, time, onlineStatus, outcomeStatus 
-}) {
+}: ContactProps) {
   return (
     <div className='contact'>
       <div className='contact__photo'>

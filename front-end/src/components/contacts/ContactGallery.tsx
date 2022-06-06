@@ -6,8 +6,11 @@ import { Contact } from './';
 
 import '../../styles/sass/components/contacts/ContactGallery.sass';
 
+type ContactGalleryProps = {
+  className: string;
+}
 
-function ContactGallery({ className }) {
+function ContactGallery({ className }: ContactGalleryProps) {
   return (
     <div className={classNames(
       'contact-gallery',
