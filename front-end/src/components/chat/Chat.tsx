@@ -26,12 +26,12 @@ function Chat() {
           className='chat__input-text'
           role="textbox"
           placeholder='Enter massage...'
-          contenteditable='true'
+          contentEditable='true'
         />
         <div className='chat__input-send-button' >
           <img
             className='chat__input-send-button-img'
-            src={ 1 }
+            src={ "1" }
             alt='send'
           />
         </div>

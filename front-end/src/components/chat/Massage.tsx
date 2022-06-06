@@ -4,8 +4,14 @@ import classNames from 'classnames';
 
 import '../../styles/sass/components/chat/Massage.sass';
 
+type MassageProps = {
+  type: string;
+  autor: string;
+  time: string;
+  children: JSX.Element | string;
+}
 
-function Massage({ type, autor, time, children }) {
+function Massage({ type, autor, time, children }: MassageProps) {
   return (
     <div className={classNames(
       'massage-gallery__massage',
