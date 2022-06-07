@@ -2,8 +2,8 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import errorMiddleware from "./middlewares/error-middleware.js";
-import authRouter from "./apps/auth/router/index.js";
+import errorMiddleware from "./src/middlewares/error-middleware.js";
+import authRouter from "./src/apps/auth/router/index.js";
 
 const PORT = process.env.PORT || 5000;
 const app = express();
