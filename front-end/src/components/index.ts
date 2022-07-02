@@ -1,7 +1,7 @@
 export {
   BaseForm,
   LoginForm,
-  RegisterForm,
+  RegistrationForm,
   RegisterConfirmation
 } from './forms';
 

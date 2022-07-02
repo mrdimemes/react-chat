@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import '../../styles/sass/pages/BaseFormPage.sass';
+import '../../styles/sass/pages/FormPage.sass';
 
 type FormPageProps = {
   label: string;
@@ -11,7 +11,7 @@ type FormPageProps = {
   className: string;
 }
 
-const BaseFormPage = (
+const FormPage = (
   { label, inviteText, form, redirectText, redirectUrl, className }: FormPageProps
 ) => {
   return (
@@ -54,4 +54,4 @@ const BaseFormPage = (
   );
 }
 
-export default BaseFormPage;
+export default FormPage;

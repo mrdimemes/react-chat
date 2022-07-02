@@ -1,11 +1,10 @@
-import React from 'react';
-import { BaseFormPage } from './';
-import { LoginForm } from '../../components';
+import { FormPage } from './';
+import { LoginForm } from '../components';
 
 
 function LoginPage() {
   return (
-    <BaseFormPage
+    <FormPage
       className='login-page'
       label='Sign in'
       inviteText='Please login to your account'

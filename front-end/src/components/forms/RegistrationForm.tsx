@@ -3,7 +3,7 @@ import React from 'react';
 import { BaseForm } from './';
 
 
-function RegisterForm() {
+function RegistrationForm() {
   return (
     <BaseForm 
       className='register-form'
@@ -18,4 +18,4 @@ function RegisterForm() {
   )
 }
 
-export default RegisterForm;
+export default RegistrationForm;
