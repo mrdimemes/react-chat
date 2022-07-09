@@ -26,7 +26,7 @@ export const login = createAsyncThunk(
 export const register = createAsyncThunk(
   'auth/registration',
   async (payload: RegistrationPayload) => {
-    const response = await AuthService.registration(payload.email, payload.password);
+    const response = await AuthService.registration(payload.email, payload.password, payload.name);
     return response.data
   }
 )
