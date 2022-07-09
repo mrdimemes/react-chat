@@ -1,4 +1,4 @@
-import { RegistrationErrors } from "../components/forms/types";
+import { RegistrationErrors, LoginErrors } from "../components/forms/types";
 
 export const validateEmail = (email: string | undefined): [boolean, string] => {
   if (typeof email === "undefined") {
@@ -43,7 +43,7 @@ export const validateRegistrationForm = (
   passwordConfirmation: string | undefined,
 ): RegistrationErrors => {
   const formErrors: RegistrationErrors = {} as RegistrationErrors;
-  const [isEmailCorrect, emailErr] = validateEmail(name);
+  const [isEmailCorrect, emailErr] = validateEmail(email);
   if (!isEmailCorrect) { formErrors.emailError = emailErr }
   const [isNameCorrect, nameErr] = validateString(name);
   if (!isNameCorrect) { formErrors.nameError = nameErr }
@@ -52,5 +52,17 @@ export const validateRegistrationForm = (
   if (password !== passwordConfirmation) {
     formErrors.passwordError = "passwords do not match"
   }
+  return formErrors;
+}
+
+export const validateLoginForm = (
+  email: string | undefined,
+  password: string | undefined,
+): LoginErrors => {
+  const formErrors: LoginErrors = {} as LoginErrors;
+  const [isEmailCorrect, emailErr] = validateEmail(email);
+  if (!isEmailCorrect) { formErrors.emailError = emailErr }
+  const [isPasswordCorrect, passErr] = validateString(password);
+  if (!isPasswordCorrect) { formErrors.passwordError = passErr }
   return formErrors;
 }
