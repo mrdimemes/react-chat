@@ -10,17 +10,17 @@ class UserController {
 
   async findUserByEmail(email) {
     const sql = "SELECT * FROM users WHERE email = ?";
-    return await this._connector.query(sql, [email]);
+    return this._connector.query(sql, [email]);
   }
 
   async findUserById(id) {
     const sql = "SELECT * FROM users WHERE user_id = ?";
-    return await this._connector.query(sql, [id]);
+    return this._connector.query(sql, [id]);
   }
 
   async findUserByActivationLink(activationLink) {
     const sql = "SELECT * FROM users WHERE activation_link = ?";
-    return await this._connector.query(sql, [activationLink]);
+    return this._connector.query(sql, [activationLink]);
   }
 
   async removeUser(id) {
