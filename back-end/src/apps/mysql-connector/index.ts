@@ -1,5 +1,5 @@
 import dotenv from "dotenv";
-import mysql, { Pool } from "mysql2/promise";
+import mysql, { Pool, QueryError as MySQLQueryError } from "mysql2/promise";
 import { ConfigError } from "../../exceptions";
 import { MySQLError } from "./exceptions";
 
@@ -32,8 +32,8 @@ class MySQLConnector {
         password: process.env.DB_PASSWORD,
         database: process.env.DB_NAME,
       });
-    } catch (err) {
-      throw MySQLError.ConnectionError("failed to create pool.", err as Error);
+    } catch (e) {
+      throw MySQLError.ConnectionError("failed to create pool.", e as Error);
     }
   }
 
@@ -41,8 +41,8 @@ class MySQLConnector {
     try {
       const [rows, _fields] = await this._pool.query(query, paramsArray);
       return rows;
-    } catch (err) {
-      throw MySQLError.QueryError(err as Error);
+    } catch (e) {
+      throw MySQLError.QueryError(e as MySQLQueryError);
     }
   }
 }
