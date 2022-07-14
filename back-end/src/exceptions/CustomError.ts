@@ -1,8 +1,12 @@
 class CustomError extends Error {
   status: number;
-  errors: Array<any>;
+  errors: object[] | Error | CustomError | undefined;
 
-  constructor(status: number, massage: string, errors: Array<any> = []) {
+  constructor(
+    status: number,
+    massage: string,
+    errors: object[] | Error | CustomError | undefined
+  ) {
     super(massage);
     this.status = status;
     this.errors = errors;

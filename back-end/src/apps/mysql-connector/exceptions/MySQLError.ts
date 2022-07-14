@@ -1,16 +1,16 @@
 import { CustomError } from "../../../exceptions";
 
 class MySQLError extends CustomError {
-  constructor(status: number, massage: string, errors: Array<any> = []) {
+  constructor(status: number, massage: string, errors: Error) {
     super(status, massage, errors);
   }
 
-  static QueryError(errors: Array<any> = []) {
-    return new MySQLError(500, "QueryError.", errors);
+  static QueryError(errors: Error) {
+    return new MySQLError(500, "MySQL query failed.", errors);
   }
 
-  static ConnectionError(massage: string, errors: Array<any> = []) {
-    return new MySQLError(500, "ConnectionError: " + massage, errors);
+  static ConnectionError(massage: string, errors: Error) {
+    return new MySQLError(500, "MySQL connection error. " + massage, errors);
   }
 }
 

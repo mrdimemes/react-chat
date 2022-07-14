@@ -33,7 +33,7 @@ class MySQLConnector {
         database: process.env.DB_NAME,
       });
     } catch (err) {
-      throw MySQLError.ConnectionError("failed to create pool.", [err]);
+      throw MySQLError.ConnectionError("failed to create pool.", err as Error);
     }
   }
 
@@ -42,9 +42,8 @@ class MySQLConnector {
       const [rows, _fields] = await this._pool.query(query, paramsArray);
       return rows;
     } catch (err) {
-      throw MySQLError.QueryError([err]);
+      throw MySQLError.QueryError(err as Error);
     }
-    
   }
 }
 
