@@ -2,24 +2,24 @@ import { CustomError } from "../../../exceptions";
 import { QueryError as MySQLQueryError } from "mysql2/promise";
 
 class MySQLError extends CustomError {
-  code?: string;
-
   constructor(
     status: number,
+    code: string,
     massage: string,
     errors?: Error,
     queryError?: MySQLQueryError
   ) {
-    super(status, massage, errors);
-    this.code = queryError?.code;
+    super(status, code, massage, errors);
+    if (queryError?.code) this.code = queryError.code
   }
 
   static QueryError(queryError: MySQLQueryError) {
-    return new MySQLError(500, "MySQL query failed.", queryError);
+    return new MySQLError(500, "QUERY_ERR", "MySQL query failed.", queryError);
   }
 
   static ConnectionError(massage: string, errors: Error) {
-    return new MySQLError(500, "MySQL connection error. " + massage, errors);
+    return new MySQLError(
+      500, "CONNECTION_ERR", "MySQL connection error. " + massage, errors);
   }
 }
 
