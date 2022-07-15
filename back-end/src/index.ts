@@ -3,7 +3,8 @@ import express, { Express } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import errorMiddleware from "./middlewares/errorMiddleware";
-// import authRouter from "./apps/auth/router/index.js";
+import authMiddleware from "./apps/auth/middlewares/authMiddleware";
+import authRouter from "./apps/auth/router";
 import { ConfigError } from "./exceptions";
 
 dotenv.config();
@@ -26,7 +27,9 @@ app.use(cors({
   credentials: true,
   origin: CLIENT_URL
 }));
-// app.use(AUTH_PATH, authRouter);
+app.use(AUTH_PATH, authRouter);
+app.use(authMiddleware);
+
 app.use(errorMiddleware);
 
 const startListening = async () => {
